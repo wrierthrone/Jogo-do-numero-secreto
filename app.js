@@ -1,7 +1,7 @@
 let listaNumerosSorteados = [];
 let limiteNumeros = 10;
 let tentativas = 0;
-let numAleatorio = gerarNumeroAleatorio(100);
+let numAleatorio = gerarNumeroAleatorio(50);
 console.log(`Número aléatorio: ${numAleatorio}`);
 
 function exibirTextoTela(tag, texto){
@@ -12,7 +12,7 @@ function exibirTextoTela(tag, texto){
 
 function mensagemInicial(){
     exibirTextoTela("h1", "Jogo do número secreto");
-    exibirTextoTela("p", "Escolha um número de 1 a 100");
+    exibirTextoTela("p", "Escolha um número de 1 a 50");
 }
 mensagemInicial();
 
@@ -47,7 +47,7 @@ function gerarNumeroAleatorio(limite) {
         listaNumerosSorteados = [];
     }
     if (listaNumerosSorteados.includes(numeroSorteado)){
-        return gerarNumeroAleatorio(100);
+        return gerarNumeroAleatorio(50);
     }else{
         listaNumerosSorteados.push(numeroSorteado);
         return numeroSorteado;
@@ -61,7 +61,7 @@ function limparCampo(){
 
 function reiniciarJogo(){
     limparCampo()
-    numAleatorio = gerarNumeroAleatorio(100);
+    numAleatorio = gerarNumeroAleatorio(50);
     console.log(`Número aléatorio: ${numAleatorio}`);
     mensagemInicial();
     tentativas = 0;
