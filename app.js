@@ -7,7 +7,6 @@ console.log(`Número aléatorio: ${numAleatorio}`);
 function exibirTextoTela(tag, texto){
     let campo = document.querySelector(tag);
     campo.innerHTML = texto;
-    responsiveVoice.speak(texto, 'Brazilian Portuguese Female', {rate: 1.2});
 }
 
 function mensagemInicial(){
@@ -15,7 +14,6 @@ function mensagemInicial(){
     exibirTextoTela("p", "Escolha um número de 1 a 10");
 }
 mensagemInicial();
-
 exibirTextoTela("h1", "Jogo do número secreto");
 exibirTextoTela("p", "Escolha um número de 1 a 10");
 
@@ -27,7 +25,7 @@ function verificarChute(){
 
     if(chute == numAleatorio){
         let palavraTentativa = tentativas > 1 ? "tentativas": "tentativa";
-        let mensagemTentativas = `Você descobriu o número secreto com  ${tentativas} ${palavraTentativa}!`;
+        let mensagemTentativas = `O número secreto é ${numAleatorio} <br> Você descobriu o número secreto com  ${tentativas} ${palavraTentativa}!`;
         exibirTextoTela("h1", "Acertou!");
         exibirTextoTela("p", mensagemTentativas);
         //exibirTextoTela("p", "Você descobriu o número secreto!");
